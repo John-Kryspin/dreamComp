@@ -27,6 +27,7 @@ export default DragSource(
       if (dropResult) {
         alert(`You dropped ${item.name} into ${dropResult.name}!`)
       }
+      return "KAPPA"
     },
   },
   (connect, monitor) => ({
