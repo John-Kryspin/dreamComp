@@ -1,31 +1,65 @@
-import  Hexagon  from 'react-hexagon';
+import Hexagon from 'react-hexagon';
 import React, { Component } from 'react'
-
+import './Grid.css'
 export class Grid extends Component {
     render() {
 
         return (
-            <div className="App">
-                <Hexagon
-                    style={{ stroke: '#42873f', fill}}
-                    backgroundImage="img/red-panda.jpg"
-                    href="http://espen.codes/"
-                />
-                  <Hexagon
-                    style={{ stroke: '#42873f'}}
-                    backgroundImage="img/red-panda.jpg"
-                    href="http://espen.codes/"
-                />
-                 <Hexagon
-                    style={{ stroke: '#42873f'}}
-                    backgroundImage="img/red-panda.jpg"
-                    href="http://espen.codes/"
-                />
-                 <Hexagon
-                    style={{ stroke: '#42873f'}}
-                    backgroundImage="img/red-panda.jpg"
-                    href="http://espen.codes/"
-                />
+            <div id="demo">
+                <div className="row">
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                </div>
+                <div className="row">
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                </div>
+                <div className="row">
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                </div>
+                <div className="row">
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                </div>
+                <div className="row">
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                </div>
+                <div className="row">
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                    <Hexagon></Hexagon>
+                </div>
             </div>
         );
     }
