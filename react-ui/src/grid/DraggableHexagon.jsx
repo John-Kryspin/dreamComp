@@ -12,6 +12,9 @@ const HexagonTarget = ({ canDrop, isOver, connectDropTarget, connectDragSource, 
 
     }
     imageURL = imageURL || imgSrc
+    const handleClear = () =>{
+        imageURL = null
+    }
     return (
         connectDragSource(<span ref={connectDropTarget}>
             <Hexagon backgroundImage={imageURL}>
@@ -26,9 +29,10 @@ export default _.flow([
         "box",
         {
             beginDrag: props => ({ name: props.name, keyName: props.keyName }),
-            // endDrag: props =>{
-            //     return {name: null, keyName: null}
-            // }
+            endDrag: (props,monitor,component) =>{
+                if(monitor.getDropResult())
+                    props.handleClear() 
+            }
         },
         (connect, monitor) => ({
             connectDragSource: connect.dragSource(),
