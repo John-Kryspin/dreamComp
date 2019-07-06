@@ -25,9 +25,8 @@ export default DragSource(
       const item = monitor.getItem()
       const dropResult = monitor.getDropResult()
       if (dropResult) {
-        alert(`You dropped ${item.name} into ${dropResult.name}!`)
+        // alert(`You dropped ${item.name} into ${dropResult.name}!`)
       }
-      return "KAPPA"
     },
   },
   (connect, monitor) => ({

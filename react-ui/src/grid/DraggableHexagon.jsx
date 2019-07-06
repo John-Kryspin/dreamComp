@@ -1,20 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { DropTarget, DragSource } from 'react-dnd'
 import Hexagon from 'react-hexagon';
 import { isatty } from 'tty';
 
-const HexagonTarget = ({ canDrop, isOver, connectDropTarget,name }) => {
+const HexagonTarget = ({ canDrop, isOver, connectDropTarget,name, didDrop, imgSrc }) => {
     const isActive = canDrop && isOver
-    console.log(name)
     let imageURL= null
     if (isActive) {
         imageURL= "https://www.mobafire.com/images/champion/square/khazix.png"
     } else if (canDrop) {
 
     }
-    const handleDrop =  function(url){
-        console.log(url)
-    }
+    imageURL = imageURL||imgSrc
     return (
         <span ref={connectDropTarget}>
         <Hexagon backgroundImage={imageURL}>
@@ -28,6 +25,7 @@ export default DropTarget(
     "box",
     {
         drop: (props,monitor,component) => {
+            props.onDrop()
             return ({ name: 'Dustbin' })}
             ,
         
@@ -36,5 +34,6 @@ export default DropTarget(
         connectDropTarget: connect.dropTarget(),
         isOver: monitor.isOver(),
         canDrop: monitor.canDrop(),
+        didDrop: monitor.didDrop()
     }),
 )(HexagonTarget)

@@ -1,20 +1,20 @@
 import Hexagon from 'react-hexagon';
 import React, { Component } from 'react'
 import './Grid.css'
-import DraggableHexagon from './DraggableHexagon';
+import DraggableHexagonContainer from './DraggableHexagonContainer';
 export class Grid extends Component {
     render() {
 
         return (
             <div id="demo">
                 <div className="row">
-                    <DraggableHexagon></DraggableHexagon>
-                    <DraggableHexagon></DraggableHexagon>
-                    <DraggableHexagon></DraggableHexagon>
-                    <DraggableHexagon></DraggableHexagon>
-                    <DraggableHexagon></DraggableHexagon>
-                    <DraggableHexagon></DraggableHexagon>
-                    <DraggableHexagon></DraggableHexagon>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
                 </div>
                 <div className="row">
                     <Hexagon></Hexagon>
