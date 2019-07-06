@@ -25,7 +25,8 @@ export default DropTarget(
     "box",
     {
         drop: (props,monitor,component) => {
-            props.onDrop()
+            console.log(props)
+            props.onDrop(props.imgSrc)
             return ({ name: 'Dustbin' })}
             ,
         

@@ -3,6 +3,7 @@ import DraggableHexagon from './DraggableHexagon';
 const DraggableHexagonContainer = (props) => {
     const [imgURL, setImgUrl]= useState(null)
     const handleDrop = (championName) => {
+        console.log(championName)
         console.log("DROPPED")
         setImgUrl("https://www.mobafire.com/images/champion/square/khazix.png")
     }
