@@ -1,4 +1,3 @@
-import Hexagon from 'react-hexagon';
 import React, { Component } from 'react'
 import './Grid.css'
 import DraggableHexagonContainer from './DraggableHexagonContainer';
@@ -17,49 +16,49 @@ export class Grid extends Component {
                     <DraggableHexagonContainer></DraggableHexagonContainer>
                 </div>
                 <div className="row">
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
                 </div>
                 <div className="row">
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
                 </div>
                 <div className="row">
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
                 </div>
                 <div className="row">
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
                 </div>
                 <div className="row">
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
-                    <Hexagon></Hexagon>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
+                    <DraggableHexagonContainer></DraggableHexagonContainer>
                 </div>
             </div>
         );
