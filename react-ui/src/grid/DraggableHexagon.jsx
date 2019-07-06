@@ -3,7 +3,7 @@ import { DropTarget, DragSource } from 'react-dnd'
 import Hexagon from 'react-hexagon';
 import _ from 'lodash';
 
-const HexagonTarget = ({ canDrop, isOver, connectDropTarget, connectDragSource, imgSrc, ...rest }) => {
+const HexagonTarget = ({ canDrop, isOver, connectDropTarget,connectDragPreview, connectDragSource, imgSrc, ...rest }) => {
     const isActive = canDrop && isOver
     let imageURL = null
     if (isActive) {
@@ -12,21 +12,21 @@ const HexagonTarget = ({ canDrop, isOver, connectDropTarget, connectDragSource, 
 
     }
     imageURL = imageURL || imgSrc
-    const handleClear = () =>{
-        imageURL = null
-    }
+    const img = new Image();
+    img.src = imageURL;
+    img.onload = () => connectDragPreview(img);
     return (
-        connectDragSource(<span ref={connectDropTarget}>
+        connectDropTarget(connectDragSource(<span>
             <Hexagon backgroundImage={imageURL}>
             </Hexagon>
-        </span>)
+        </span>))
     )
 
 
 }
 export default _.flow([
     DragSource(
-        "box",
+        "champion",
         {
             beginDrag: props => ({ name: props.name, keyName: props.keyName }),
             endDrag: (props,monitor,component) =>{
@@ -36,10 +36,11 @@ export default _.flow([
         },
         (connect, monitor) => ({
             connectDragSource: connect.dragSource(),
+            connectDragPreview: connect.dragPreview(),
             isDragging: monitor.isDragging(),
         }),
     ), DropTarget(
-        "box",
+        "champion",
         {
             drop: (props, monitor, component) => {
                 props.onDrop(monitor.getItem())

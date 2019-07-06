@@ -10,7 +10,7 @@ const Box = ({ name,keyName, connectDragSource }) => {
   )
 }
 export default DragSource(
-  "box",
+  "champion",
   {
     beginDrag: props => ({ name: props.name, keyName:props.keyName}),
   },
