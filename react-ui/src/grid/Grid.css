@@ -23,7 +23,6 @@ body { background: #2e2e2e; color: #fff; font-family: sans-serif; margin-bottom:
   margin-top: -4.3%;
 }
 
-#demo .row:nth-child(even) :first-child {
-  margin-left: 6.5%;
+#demo > div:nth-child(even) > span:nth-child(1) > svg{
+    margin-left: 118px !important
 }
-
