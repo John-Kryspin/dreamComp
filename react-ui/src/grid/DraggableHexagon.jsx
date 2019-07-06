@@ -16,7 +16,7 @@ const HexagonTarget = ({ canDrop, isOver, connectDropTarget,connectDragPreview, 
     img.src = imageURL;
     img.onload = () => connectDragPreview(img);
     return (
-        connectDropTarget(connectDragSource(<span>
+        connectDropTarget(connectDragSource(<span id="championHexSpan">
             <Hexagon backgroundImage={imageURL}>
             </Hexagon>
         </span>))

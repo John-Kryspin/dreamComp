@@ -1,8 +1,8 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 body { background: #2e2e2e; color: #fff; font-family: sans-serif; margin-bottom: 30px; }
-#demo { padding: 0 15px; font-size: 16px; max-width: 1800px; margin: 0 auto; }
-#demo svg { width: 13.26%;  }
+#demo { padding: 0 15px; font-size: 16px;  margin: 0 auto; }
+#demo svg { width: 13.26%}
 #demo svg text, #demo .foreign-object p {
   pointer-events: none;
   text-shadow: 1px 1px 5px #000;
@@ -13,7 +13,10 @@ body { background: #2e2e2e; color: #fff; font-family: sans-serif; margin-bottom:
   color: rgba(255, 255, 255, 0.90);
   alignment-baseline: middle;
 }
+#demo, #championsContainer{
+    display:inline-block;
 
+}
 #demo .text text, #demo .text p {
   pointer-events: auto;
   text-shadow: 1px 1px 20px #000;
@@ -24,5 +27,9 @@ body { background: #2e2e2e; color: #fff; font-family: sans-serif; margin-bottom:
 }
 
 #demo > div:nth-child(even) > span:nth-child(1) > svg{
-    margin-left: 53px !important
+    margin-left: 6.7% !important
 }
+#championBoxSpan{
+    display:inline-block
+}
+

@@ -4,7 +4,7 @@ import { DragSource } from 'react-dnd'
 const Box = ({ name,keyName, connectDragSource }) => {
   const imageUrl = `http://ddragon.leagueoflegends.com/cdn/9.3.1/img/champion/${keyName}.png`
   return (
-    <span ref={connectDragSource}>
+    <span id="championBoxSpan" ref={connectDragSource}>
       <img src={imageUrl} alt={name} width="120px" height="120px"/>
     </span>
   )
