@@ -3,6 +3,7 @@ import Box from './Box'
 import championsJson from '../champions.json'
 import { InputGroup, FormControl, Button } from 'react-bootstrap'
 import classesJson from '../classes.json'
+import originsJson from '../origins.json'
 let championsArray = []
 for (let championName in championsJson) {
 	championsArray.push(championsJson[championName])
@@ -13,6 +14,7 @@ const Container = () => {
 	const [championInput, setChampionInput] = useState("")
 	const [activeChampions, setActiveChampions] = useState([])
 	const [bonuses, setBonuses] = useState([]);
+
 
 	const filterChampions = () => {
 		let filteredChampions = championsArray.filter((champion) => {
@@ -29,10 +31,13 @@ const Container = () => {
 	useEffect(() => {
 		let championClasses = []
 		let classesCount = {}
-
+		let originsCount= {}
+		let championOrigins = []
 		for (const champion of activeChampions) {
 			championClasses.push(...champion.class)
+			championOrigins.push(...champion.origin)
 		}
+
 		for (let championClass of championClasses) {
 			championClass = championClass.toLowerCase()
 			if (championClass === classesJson[championClass].key) {
@@ -44,12 +49,29 @@ const Container = () => {
 				}
 			}
 		}
+		for(let championClass of championOrigins){
+			championClass = championClass.toLowerCase()
+				if (championClass === originsJson[championClass].key) {
+					if (originsCount[championClass] !== undefined) {
+						originsCount[championClass] = originsCount[championClass] + 1
+					}
+					else {
+						originsCount[championClass] = 1
+					}
+				}
+			}
 		console.log(classesCount)
 		let bonuses = []
 		for (const activeClass in classesCount) {
 			if (classesCount[activeClass] >= classesJson[activeClass].bonuses[0].needed) {
 				bonuses.push(classesJson[activeClass].bonuses[0].effect)
 				console.log("you have this bonus! : " + classesJson[activeClass].bonuses[0].effect)
+			}
+		}
+		for (const activeClass in originsCount) {
+			if (originsCount[activeClass] >= originsJson[activeClass].bonuses[0].needed) {
+				bonuses.push(originsJson[activeClass].bonuses[0].effect)
+				console.log("you have this bonus! : " + originsJson[activeClass].bonuses[0].effect)
 			}
 		}
 		setBonuses(bonuses)
