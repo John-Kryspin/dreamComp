@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Box from './Box'
 import championsJson from '../champions.json'
 import { InputGroup, FormControl, Button } from 'react-bootstrap'
@@ -11,6 +11,8 @@ console.log(championsArray)
 const Container = () => {
   const [champions, setChampions] = useState([])
   const [championInput, setChampionInput] = useState("")
+  const [activeChampions, setActiveChampions] = useState([])
+
   const filterChampions = () => {
     let filteredChampions = championsArray.filter((champion) => {
       if (champion.name.toLowerCase().indexOf(championInput.toLowerCase()) !== -1)
@@ -20,6 +22,24 @@ const Container = () => {
     console.log(filteredChampions)
     setChampions(filteredChampions)
   }
+  const addToActiveChampion = (champion)=>{
+    setActiveChampions([...activeChampions, champion])
+  } 
+  useEffect(() => {
+   let championClasses = []
+   for(const champion of activeChampions){
+     championClasses.push(...champion.class)
+   }
+   let blademasterCount = 0
+   for(const championClass of championClasses){
+     console.log(championClass)
+      if(championClass === "Sorcerer")
+        blademasterCount ++
+   }
+   if(blademasterCount>=2){
+     console.log("YOU HAVE SORCERER SYNERGY")
+   }
+  }, [activeChampions]);
   return (
     // ddragon.leagueoflegends.com/cdn/9.3.1/data/en_US/champion.json
 
@@ -38,8 +58,8 @@ const Container = () => {
         />
       </InputGroup>
       {champions.length > 0 && (<div id="availableChampions">
-        {champions.map(({ name, key }) => {
-          return <Box name={name} keyName={key}></Box>
+        {champions.map((champion) => {
+          return <Box name={champion.name} keyName={champion.key} addToActiveChampion={()=>addToActiveChampion(champion)} championInfo={champion}></Box>
         })}
       </div>)
       }
