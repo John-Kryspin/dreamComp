@@ -13,7 +13,7 @@ const Container = () => {
   const [championInput, setChampionInput] = useState("")
   const filterChampions = () => {
     let filteredChampions = championsArray.filter((champion) => {
-      if (champion.name.toLowerCase().indexOf(championInput.toLowerCase())!== -1)
+      if (champion.name.toLowerCase().indexOf(championInput.toLowerCase()) !== -1)
         return true
       return false
     })
@@ -33,13 +33,16 @@ const Container = () => {
             setChampionInput(event.target.value)
           }}
           onKeyPress={(event) => {
-              filterChampions()
+            filterChampions()
           }}
         />
       </InputGroup>
-      {champions.map(({ name, key }) => {
-        return <Box name={name} keyName={key}></Box>
-      })}
+      {champions.length > 0 && (<div id="availableChampions">
+        {champions.map(({ name, key }) => {
+          return <Box name={name} keyName={key}></Box>
+        })}
+      </div>)
+      }
     </div>
   )
 }
